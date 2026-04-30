@@ -411,8 +411,7 @@ img {
   .header-area .palatin-main-menu {
     position: relative;
     width: 100%;
-    opacity: 0.8;
-    background-color: #055c9d;
+    background-color: rgba(5, 92, 157, 0.7);
     border-bottom: 2px solid #055c9d; }
     .header-area .palatin-main-menu .classy-nav-container {
       background-color: transparent; }
@@ -491,7 +490,7 @@ img {
     top: 0;
     left: 0;
     z-index: 9999;
-    background-color: #055c9d;
+    background-color: rgba(5, 92, 157, 1);
     box-shadow: 0 5px 50px 15px rgba(0, 0, 0, 0.2); }
     .header-area .is-sticky .palatin-main-menu .classy-navbar {
       height: 90px; }
