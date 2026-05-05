@@ -8,6 +8,20 @@
         $('.preloader').fadeOut('slow', function () {
             $(this).remove();
         });
+
+        if ($.fn.owlCarousel) {
+            $('.room-slides').owlCarousel({
+                items: 1,
+                margin: 0,
+                loop: true,
+                nav: true,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                smartSpeed: 600
+            });
+        }
     });
 
     // :: 2.0 Nav Active Code
@@ -154,8 +168,8 @@
     }
 
     // :: 11.0 prevent default a click
-    $('a[href="#"]').on('click', function ($) {
-        $.preventDefault();
+    $('a[href="#"]').on('click', function (e) {
+        e.preventDefault();
     });
 
     // :: 12.0 wow Active Code
