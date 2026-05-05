@@ -465,7 +465,12 @@ img {
           .header-area .palatin-main-menu .classy-navbar .classynav ul li ul li a {
             color: #ffffff; } }
       .header-area .palatin-main-menu .classy-navbar .menu-btn {
-        margin-left: 100px; }
+        margin-left: 250px; }
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+          .header-area .palatin-main-menu .classy-navbar .menu-btn {
+            margin-left: 30px; } }
+      .header-area .palatin-main-menu .classy-navbar .menu-btn {
+        /* margin-left removed — position is now controlled by flexbox */ }
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .header-area .palatin-main-menu .classy-navbar .menu-btn {
             margin-left: 30px; } }
@@ -477,6 +482,8 @@ img {
             display: inline-block; } }
         @media only screen and (max-width: 767px) {
           .header-area .palatin-main-menu .classy-navbar .menu-btn {
+            margin-left: 30px;
+            border: 2px solid #ffffff;
             margin-left: 30px;
             border: 2px solid #ffffff;
             margin-top: 30px;
@@ -498,14 +505,14 @@ img {
         .header-area .is-sticky .palatin-main-menu .classy-navbar {
           height: 70px; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 768px) and (max-width: 95%) {
   .breakpoint-on .classy-navbar .classy-menu {
     background-color: #055c9d; } }
 @media only screen and (max-width: 767px) {
   .breakpoint-on .classy-navbar .classy-menu {
     background-color: #055c9d; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 768px) and (max-width: 95%) {
   .classynav ul li .megamenu .single-mega.cn-col-4 {
     padding: 0; } }
 @media only screen and (max-width: 767px) {
