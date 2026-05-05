@@ -15,7 +15,7 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=2.7">
+    <link rel="stylesheet" href="style.css?v=4.4">
 
 </head>
 
@@ -32,12 +32,12 @@
         <!-- Navbar Area -->
         <div class="palatin-main-menu">
             <div class="classy-nav-container breakpoint-off">
-                <div class="container">
+                <div class="container-fluid navbar-container">
                     <!-- Menu -->
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="index" class="nav-brand"><img src="img/core-img/logo.png" width="150px"
+                        <a href="/" class="nav-brand"><img src="img/core-img/logo.png" width="150px"
                                 alt=""></a>
 
                         <!-- Navbar Toggler -->
@@ -56,21 +56,20 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index">Home</a></li>
+                                    <li><a href="/">Home</a></li>
                                     <li><a href="rooms">Room</a></li>
                                     <li><a href="facilities">Facilities</a></li>
                                     <li><a href="dining">Dining</a></li>
                                     <li><a href="meeting">Meeting</a></li>
                                     <li><a href="contact">Contact</a></li>
                                 </ul>
-
-                                <!-- Button -->
-                                <div class="menu-btn">
-                                    <a href="#" class="btn palatin-btn">Book</a>
-                                </div>
-
                             </div>
                             <!-- Nav End -->
+                        </div>
+
+                        <!-- Button -->
+                        <div class="menu-btn">
+                            <a href="#" class="btn palatin-btn">Book Now</a>
                         </div>
                     </nav>
                 </div>
@@ -198,45 +197,81 @@
     <footer class="footer-area">
         <div class="container">
             <div class="row">
+                <!-- Left Side: Map & Message -->
+                <div class="col-12 col-lg-7">
+                    <div class="footer-map-container">
+                        <div class="footer-map-iframe">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.2217557173035!2d100.8730363!3d12.8934575!2m3!1f0!2f0!3f0!3m2!i1024!2i768!4f13.1!3m3!1m2!1s0x3102978f2f3b3899%3A0x9caa4cba84e8548c!2sCoco%20Beach%20Hotel%20Jomtien%20Pattaya!5e0!3m2!1sen!2sth!4v1777986937234!5m2!1sen!2sth"
+                                allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="footer-map-text">
+                            <p>We look forward to welcoming you to Coco Beach Hotel Jomtien Pattaya. Whether you
+                                are planning a relaxing getaway, a family holiday, or a special event, our team is here
+                                to assist you every step of the way.</p>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Footer Widget Area -->
+                <!-- Right Side: Contact Info & Follow Us -->
                 <div class="col-12 col-lg-5">
-                    <div class="footer-widget-area mt-50">
-                        <a href="#" class="d-block mb-5"><img src="img/core-img/logo.png" alt=""></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris
-                            sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus
-                            finibus. </p>
+                    <div class="footer-contact-content">
+                        <!-- Contact Title -->
+                        <div class="footer-section-title">
+                            <h2>Contact Info</h2>
+                            <div class="title-line"></div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="footer-contact-item">
+                            <div class="icon-box">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <p style="font-size: 14px;">Coco Beach Hotel Jomtien Pattaya <br>
+                                31/71 Moo 12, Nongprue, Banglamung <br>
+                                Chonburi 20150, Thailand</p>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="footer-contact-item">
+                            <div class="icon-box">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <p style="font-size: 14px;">+66 (0)38-231001-6 <br>
+                                +66 (0)92-6298668</p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="footer-contact-item">
+                            <div class="icon-box">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <p style="font-size: 14px;">rsvn@cocobeachjomtien.com</p>
+                        </div>
+
+                        <!-- Social Section -->
+                        <div class="footer-social-section">
+                            <div class="title-line"></div>
+                            <h3>Follow Us</h3>
+                            <div class="footer-social-icons">
+                                <a href="https://www.facebook.com/cocobeachhotel.jomtien"><i style="width: 25px;" class="fa fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/cocobeachhotel.jomtien"><i style="width: 25px;" class="fa fa-instagram"></i></a>
+                                <a href="https://www.tripadvisor.com/Hotel_Review-g293919-d27110578-Reviews-Coco_Beach_Hotel_Jomtien_Pattaya-Pattaya_Chonburi_Province.html"><i style="width: 25px;" class="fa fa-tripadvisor"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Footer Widget Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Find us on the map</h6>
-                        <img src="img/bg-img/footer-map.png" alt="">
-                    </div>
-                </div>
-
-                <!-- Footer Widget Area -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Subscribe to our newsletter</h6>
-                        <form action="#" method="post" class="subscribe-form">
-                            <input type="email" name="subscribe-email" id="subscribeemail" placeholder="Your E-mail">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Copywrite Text -->
+            <!-- Copywrite Text -->
+            <div class="row">
                 <div class="col-12">
-                    <div class="copywrite-text mt-30">
-                        <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                                template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <div class="copywrite-text">
+                        <p>Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
                         </p>
                     </div>
                 </div>
