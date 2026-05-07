@@ -1207,6 +1207,9 @@ img {
     padding-right: 0;
     margin-bottom: 50px;
   }
+  .footer-contact-content {
+    padding-left: 0;
+  }
 }
 
 .footer-map-iframe {
