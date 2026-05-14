@@ -455,19 +455,45 @@ img {
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .header-area .palatin-main-menu .classy-navbar .classynav ul li a {
             font-size: 14px; } }
-        @media only screen and (min-width: 768px) and (max-width: 991px) {
+        @media only screen and (max-width: 991px) {
+          .header-area .palatin-main-menu .classy-navbar .classynav ul {
+            display: block;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+          }
+          .header-area .palatin-main-menu .classy-navbar .classynav ul li {
+            display: block;
+            width: 100%;
+          }
           .header-area .palatin-main-menu .classy-navbar .classynav ul li a {
-            background-color: #055c9d; } }
-        @media only screen and (max-width: 767px) {
-          .header-area .palatin-main-menu .classy-navbar .classynav ul li a {
-            background-color: #055c9d; } }
+            background-color: transparent;
+            display: block;
+            width: 100%;
+            padding: 20px 30px;
+            font-size: 18px;
+            line-height: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+          }
+          .header-area .palatin-main-menu .classy-navbar .classynav ul li.active a {
+            background-color: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            border-left: 5px solid #ffffff;
+            padding-left: 25px;
+          }
+        }
       .header-area .palatin-main-menu .classy-navbar .classynav ul li.active a {
         color: #ffffff;
         font-weight: 700;
-        background-color: transparent;
-        text-decoration: underline;
-        text-underline-offset: 10px;
-        text-decoration-thickness: 2px; }
+      }
+      @media only screen and (min-width: 992px) {
+        .header-area .palatin-main-menu .classy-navbar .classynav ul li.active a {
+          text-decoration: underline;
+          text-underline-offset: 10px;
+          text-decoration-thickness: 2px;
+          background-color: transparent;
+        }
+      }
       .header-area .palatin-main-menu .classy-navbar .classynav ul li.megamenu-item > a::after,
       .header-area .palatin-main-menu .classy-navbar .classynav ul li.has-down > a::after {
         color: #ffffff; }
@@ -482,26 +508,29 @@ img {
         @media only screen and (max-width: 767px) {
           .header-area .palatin-main-menu .classy-navbar .classynav ul li ul li a {
             color: #ffffff; } }
-      .header-area .palatin-main-menu .classy-navbar .classy-menu {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        display: -webkit-box !important;
-        display: -ms-flexbox !important;
-        display: flex !important;
-        -webkit-box-pack: center !important;
-        -ms-flex-pack: center !important;
-        justify-content: center !important;
-        -webkit-box-align: center !important;
-        -ms-flex-align: center !important;
-        align-items: center !important; }
-      .header-area .palatin-main-menu .classy-navbar .classynav {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center; }
+      @media only screen and (min-width: 992px) {
+        .header-area .palatin-main-menu .classy-navbar .classy-menu {
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          display: -webkit-box !important;
+          display: -ms-flexbox !important;
+          display: flex !important;
+          -webkit-box-pack: center !important;
+          -ms-flex-pack: center !important;
+          justify-content: center !important;
+          -webkit-box-align: center !important;
+          -ms-flex-align: center !important;
+          align-items: center !important;
+        }
+        .header-area .palatin-main-menu .classy-navbar .classynav {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+        }
         .header-area .palatin-main-menu .classy-navbar .classynav ul {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -510,9 +539,12 @@ img {
           -ms-flex-align: center;
           align-items: center;
           margin: 0;
-          padding: 0; }
-          .header-area .palatin-main-menu .classy-navbar .classynav ul li {
-            display: inline-block; }
+          padding: 0;
+        }
+        .header-area .palatin-main-menu .classy-navbar .classynav ul li {
+          display: inline-block;
+        }
+      }
       .header-area .palatin-main-menu .classy-navbar > .menu-btn {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 300px;
