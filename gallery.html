@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Photo Gallery - Coco Beach Hotel Jomtien Pattaya">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Gallery - Coco Beach Hotel &amp; Jomtien, Pattaya</title>
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="stylesheet" href="style.css?v=5.9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* ---- Gallery Page Styles ---- */
+        .gallery-filter-area {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        .gallery-filter-area .section-heading {
+            margin-bottom: 40px;
+        }
+        .gallery-filter-area .section-heading .line- {
+            margin: 0 auto 30px;
+        }
+        .filter-btns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 50px;
+        }
+        .filter-btn {
+            background-color: transparent;
+            border: 2px solid #055c9d;
+            color: #055c9d;
+            padding: 10px 28px;
+            font-size: 14px;
+            font-family: "FuturaLT-Book", sans-serif;
+            cursor: pointer;
+            transition: all 300ms ease;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: #055c9d;
+            color: #ffffff;
+        }
+
+        /* ---- Gallery Grid ---- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding-bottom: 60px;
+        }
+        @media (max-width: 991px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 575px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            aspect-ratio: 4/3;
+            transition: opacity 500ms ease, transform 500ms ease;
+        }
+        .gallery-item.hidden {
+            display: none;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 500ms ease;
+            display: block;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        .gallery-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(5, 92, 157, 0.55);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 300ms ease;
+        }
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        .gallery-item-overlay i {
+            color: #ffffff;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .gallery-item-overlay span {
+            color: #ffffff;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-top: 1px solid rgba(255,255,255,0.5);
+            padding-top: 8px;
+        }
+
+        /* ---- Lazy Load Skeleton ---- */
+        .gallery-item.lazy-placeholder {
+            background: linear-gradient(90deg, #e8e8e8 25%, #f5f5f5 50%, #e8e8e8 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.4s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* ---- Load More ---- */
+        .load-more-area {
+            text-align: center;
+            padding-bottom: 80px;
+        }
+        #loadMoreBtn {
+            background-color: transparent;
+            border: 2px solid #055c9d;
+            color: #055c9d;
+            padding: 14px 40px;
+            font-size: 15px;
+            font-family: "FuturaLT-Book", sans-serif;
+            cursor: pointer;
+            transition: all 300ms ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #loadMoreBtn:hover {
+            background-color: #055c9d;
+            color: #ffffff;
+        }
+        #loadMoreBtn.loading i {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        #loadMoreBtn.hidden { display: none; }
+
+        /* ---- Lightbox ---- */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+        }
+        .lightbox-inner {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .lightbox-inner img {
+            max-height: 80vh;
+            max-width: 100%;
+            object-fit: contain;
+            border: 2px solid #055c9d;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-caption {
+            color: #ffffff;
+            margin-top: 16px;
+            font-size: 14px;
+            text-align: center;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: #ffffff;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 300ms;
+            line-height: 1;
+        }
+        .lightbox-close:hover { color: #055c9d; }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(5,92,157,0.7);
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: background 300ms;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-nav:hover { background: #055c9d; }
+        .lightbox-prev { left: -70px; }
+        .lightbox-next { right: -70px; }
+        @media (max-width: 767px) {
+            .lightbox-prev { left: -5px; }
+            .lightbox-next { right: -5px; }
+        }
+
+        /* fade-in animation for newly loaded items */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .gallery-item.fade-in {
+            animation: fadeInUp 400ms ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="cssload-container">
+            <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-area">
+        <div class="palatin-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid navbar-container">
+                    <nav class="classy-navbar justify-content-between" id="palatinNav">
+                        <a href="/" class="nav-brand"><img src="img/core-img/logo.png" width="150px" alt="Coco Beach Hotel"></a>
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+                        <div class="classy-menu">
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="rooms">Room</a></li>
+                                    <li class="active"><a href="gallery">Gallery</a></li>
+                                    <li><a href="facilities">Facilities</a></li>
+                                    <li><a href="dining">Dining</a></li>
+                                    <li><a href="meeting">Meeting</a></li>
+                                    <li><a href="contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-btn">
+                            <a href="#" class="btn palatin-btn">Book Now</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center"
+        style="background-image: url(img/bg-img/bg-1.jpg);">
+    </section>
+
+    <!-- Gallery Filter + Grid -->
+    <section class="gallery-filter-area">
+        <div class="container">
+            <div class="section-heading text-center">
+                <div class="line-"></div>
+                <h2>Our Gallery</h2>
+                <p>Explore the beauty of Coco Beach Hotel Jomtien Pattaya</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-btns" id="filterBtns">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="rooms">Rooms</button>
+                <button class="filter-btn" data-filter="pool">Pool &amp; Beach</button>
+                <button class="filter-btn" data-filter="dining">Dining</button>
+                <button class="filter-btn" data-filter="facilities">Facilities</button>
+                <button class="filter-btn" data-filter="exterior">Exterior</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid"></div>
+
+            <!-- Load More -->
+            <div class="load-more-area">
+                <button id="loadMoreBtn">
+                    <i class="fa fa-circle-notch"></i> Load More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" id="lightboxClose"><i class="fa fa-times"></i></button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fa fa-chevron-left"></i></button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fa fa-chevron-right"></i></button>
+            <img src="" alt="" id="lightboxImg">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <div class="footer-map-container">
+                        <div class="footer-map-iframe">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.2217557173035!2d100.8730363!3d12.8934575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102978f2f3b3899%3A0x9caa4cba84e8548c!2sCoco%20Beach%20Hotel%20Jomtien%20Pattaya!5e0!3m2!1sen!2sth!4v1777986937234!5m2!1sen!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="footer-map-text">
+                            <p>We look forward to welcoming you to Coco Beach Hotel Jomtien Pattaya.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="footer-contact-content">
+                        <div class="footer-section-title">
+                            <h2>Contact Info</h2>
+                            <div class="title-line"></div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="icon-box"><i class="fa fa-home"></i></div>
+                            <p style="font-size:14px;">Coco Beach Hotel Jomtien Pattaya<br>31/71 Moo 12, Nongprue, Banglamung<br>Chonburi 20150, Thailand</p>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="icon-box"><i class="fa fa-phone"></i></div>
+                            <p style="font-size:14px;">+66 (0)38-231001-6<br>+66 (0)92-6298668</p>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="icon-box"><i class="fa fa-envelope"></i></div>
+                            <p style="font-size:14px;">rsvn@cocobeachjomtien.com</p>
+                        </div>
+                        <div class="footer-social-section">
+                            <div class="title-line"></div>
+                            <h2>Follow Us</h2>
+                            <div class="footer-social-icons">
+                                <a href="https://www.facebook.com/cocobeachhotel.jomtien"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/cocobeachhotel.jomtien"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.tripadvisor.com/Hotel_Review-g293919-d27110578-Reviews-Coco_Beach_Hotel_Jomtien_Pattaya-Pattaya_Chonburi_Province.html"><i class="fa fa-tripadvisor"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="copywrite-text">
+                        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Coco Beach Hotel Jomtien Pattaya</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins/plugins.js"></script>
+    <script src="js/active.js"></script>
+
+    <script>
+    (function () {
+        // ---- All gallery data ----
+        const ALL_ITEMS = [
+            // Rooms
+            { src: 'img/rooms-img/room-1-00.jpg', cat: 'rooms', caption: 'Deluxe Room' },
+            { src: 'img/rooms-img/room-1-01.jpg', cat: 'rooms', caption: 'Deluxe Room' },
+            { src: 'img/rooms-img/room-1-02.jpg', cat: 'rooms', caption: 'Deluxe Room' },
+            { src: 'img/rooms-img/room-1-03.jpg', cat: 'rooms', caption: 'Deluxe Room' },
+            { src: 'img/rooms-img/room-1-04.jpg', cat: 'rooms', caption: 'Deluxe Room' },
+            { src: 'img/rooms-img/room-2-00.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
+            { src: 'img/rooms-img/room-2-01.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
+            { src: 'img/rooms-img/room-2-02.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
+            { src: 'img/rooms-img/room-2-03.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
+            { src: 'img/rooms-img/room-3-00.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
+            { src: 'img/rooms-img/room-3-01.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
+            { src: 'img/rooms-img/room-3-02.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
+            { src: 'img/rooms-img/room-3-03.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
+            { src: 'img/rooms-img/room-3-04.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
+            // Pool & Beach
+            { src: 'img/bg-img/bg-pool.jpg', cat: 'pool', caption: 'Swimming Pool' },
+            { src: 'img/bg-img/f-pool.jpg',  cat: 'pool', caption: 'Pool Area' },
+            { src: 'img/bg-img/bg-1.jpg',    cat: 'pool', caption: 'Beachside' },
+            { src: 'img/bg-img/bg-2.jpg',    cat: 'pool', caption: 'Beachside View' },
+            { src: 'img/bg-img/bg-3.jpg',    cat: 'pool', caption: 'Pool &amp; Sea' },
+            // Dining
+            { src: 'img/bg-img/f-res.jpg',   cat: 'dining', caption: 'Restaurant' },
+            { src: 'img/bg-img/f-finbar.jpg', cat: 'dining', caption: 'Fin Bar' },
+            { src: 'img/bg-img/bg-9.jpg',    cat: 'dining', caption: 'Dining Experience' },
+            // Facilities
+            { src: 'img/bg-img/bg-4.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/bg-img/bg-5.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/bg-img/bg-6.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/bg-img/bg-7.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/bg-img/bg-8.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            // Exterior
+            { src: 'img/bg-img/mix3-01.jpg', cat: 'exterior', caption: 'Hotel Exterior' },
+            { src: 'img/bg-img/mix3-02.jpg', cat: 'exterior', caption: 'Hotel Exterior' },
+            { src: 'img/bg-img/mix3-03.jpg', cat: 'exterior', caption: 'Hotel Exterior' },
+            { src: 'img/bg-img/bg-room.jpg', cat: 'exterior', caption: 'Hotel View' },
+        ];
+
+        const BATCH = 9;
+        let currentFilter = 'all';
+        let shownCount = 0;
+        let filteredItems = [];
+        let lightboxIndex = 0;
+
+        const grid = document.getElementById('galleryGrid');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightboxImg');
+        const lbCaption = document.getElementById('lightboxCaption');
+
+        function getFiltered() {
+            return currentFilter === 'all' ? ALL_ITEMS : ALL_ITEMS.filter(i => i.cat === currentFilter);
+        }
+
+        function renderBatch() {
+            filteredItems = getFiltered();
+            const batch = filteredItems.slice(shownCount, shownCount + BATCH);
+            batch.forEach((item, idx) => {
+                const el = document.createElement('div');
+                el.className = 'gallery-item fade-in';
+                el.dataset.cat = item.cat;
+                el.dataset.index = shownCount + idx;
+                el.innerHTML = `
+                    <img src="${item.src}" alt="${item.caption}" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fa fa-expand"></i>
+                        <span>${item.caption}</span>
+                    </div>`;
+                el.addEventListener('click', () => openLightbox(parseInt(el.dataset.index)));
+                grid.appendChild(el);
+            });
+            shownCount += batch.length;
+            loadMoreBtn.classList.toggle('hidden', shownCount >= filteredItems.length);
+        }
+
+        function resetGrid() {
+            grid.innerHTML = '';
+            shownCount = 0;
+            renderBatch();
+        }
+
+        // Filter
+        document.getElementById('filterBtns').addEventListener('click', function (e) {
+            const btn = e.target.closest('.filter-btn');
+            if (!btn) return;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.dataset.filter;
+            resetGrid();
+        });
+
+        // Load More
+        loadMoreBtn.addEventListener('click', function () {
+            this.classList.add('loading');
+            setTimeout(() => {
+                this.classList.remove('loading');
+                renderBatch();
+            }, 600);
+        });
+
+        // Lightbox
+        function openLightbox(index) {
+            lightboxIndex = index;
+            const item = filteredItems[index];
+            lbImg.src = item.src;
+            lbImg.alt = item.caption;
+            lbCaption.innerHTML = item.caption;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.getElementById('lightboxPrev').addEventListener('click', function (e) {
+            e.stopPropagation();
+            lightboxIndex = (lightboxIndex - 1 + filteredItems.length) % filteredItems.length;
+            openLightbox(lightboxIndex);
+        });
+        document.getElementById('lightboxNext').addEventListener('click', function (e) {
+            e.stopPropagation();
+            lightboxIndex = (lightboxIndex + 1) % filteredItems.length;
+            openLightbox(lightboxIndex);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') { lightboxIndex = (lightboxIndex - 1 + filteredItems.length) % filteredItems.length; openLightbox(lightboxIndex); }
+            if (e.key === 'ArrowRight') { lightboxIndex = (lightboxIndex + 1) % filteredItems.length; openLightbox(lightboxIndex); }
+        });
+
+        // Init
+        resetGrid();
+
+        // Scroll-based lazy load
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const remaining = filteredItems.length - shownCount;
+                    if (remaining > 0) {
+                        loadMoreBtn.classList.add('loading');
+                        setTimeout(() => {
+                            loadMoreBtn.classList.remove('loading');
+                            renderBatch();
+                        }, 500);
+                    }
+                }
+            });
+        }, { rootMargin: '200px' });
+
+        observer.observe(loadMoreBtn);
+    })();
+    </script>
+</body>
+</html>
