@@ -5,11 +5,23 @@
     <meta name="description" content="Photo Gallery - Coco Beach Hotel Jomtien Pattaya">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Gallery - Coco Beach Hotel &amp; Jomtien, Pattaya</title>
+    <title>Coco Beach Hotel &amp; Jomtien, Pattaya</title>
     <link rel="icon" href="img/core-img/favicon.ico">
-    <link rel="stylesheet" href="style.css?v=5.9">
+    <link rel="stylesheet" href="style.css?v=6.4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        /* Custom aspect ratio 16:9 for gallery page header */
+        .breadcumb-area {
+            height: auto !important;
+            aspect-ratio: 16 / 9 !important;
+            min-height: 450px; /* Striking banner height for desktops & tablets */
+        }
+        @media (max-width: 767px) {
+            .breadcumb-area {
+                min-height: 300px; /* Responsive banner fallback for mobile */
+            }
+        }
+
         /* ---- Gallery Page Styles ---- */
         .gallery-filter-area {
             padding: 60px 0 40px;
@@ -34,10 +46,10 @@
             color: #055c9d;
             padding: 10px 28px;
             font-size: 14px;
-            font-family: "FuturaLT-Book", sans-serif;
+            font-family: "Canva Sans", "Inter", sans-serif;
             cursor: pointer;
             transition: all 300ms ease;
-            text-transform: capitalize;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         .filter-btn:hover,
@@ -131,7 +143,7 @@
             color: #055c9d;
             padding: 14px 40px;
             font-size: 15px;
-            font-family: "FuturaLT-Book", sans-serif;
+            font-family: "Canva Sans", "Inter", sans-serif;
             cursor: pointer;
             transition: all 300ms ease;
             display: inline-flex;
@@ -278,7 +290,7 @@
 
     <!-- Breadcrumb -->
     <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center"
-        style="background-image: url(img/bg-img/bg-1.jpg);">
+        style="background-image: url(img/bg-img/bg-gallery.png);">
     </section>
 
     <!-- Gallery Filter + Grid -->
@@ -292,12 +304,10 @@
 
             <!-- Filter Buttons -->
             <div class="filter-btns" id="filterBtns">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="rooms">Rooms</button>
-                <button class="filter-btn" data-filter="pool">Pool &amp; Beach</button>
-                <button class="filter-btn" data-filter="dining">Dining</button>
-                <button class="filter-btn" data-filter="facilities">Facilities</button>
-                <button class="filter-btn" data-filter="exterior">Exterior</button>
+                <button class="filter-btn active" data-filter="rooms">ROOM</button>
+                <button class="filter-btn" data-filter="dining">DINING</button>
+                <button class="filter-btn" data-filter="facilities">FACILITIES</button>
+                <button class="filter-btn" data-filter="meeting">MEETING ROOM</button>
             </div>
         </div>
 
@@ -391,45 +401,95 @@
         // ---- All gallery data ----
         const ALL_ITEMS = [
             // Rooms
-            { src: 'img/rooms-img/room-1-00.jpg', cat: 'rooms', caption: 'Deluxe Room' },
-            { src: 'img/rooms-img/room-1-01.jpg', cat: 'rooms', caption: 'Deluxe Room' },
-            { src: 'img/rooms-img/room-1-02.jpg', cat: 'rooms', caption: 'Deluxe Room' },
-            { src: 'img/rooms-img/room-1-03.jpg', cat: 'rooms', caption: 'Deluxe Room' },
-            { src: 'img/rooms-img/room-1-04.jpg', cat: 'rooms', caption: 'Deluxe Room' },
-            { src: 'img/rooms-img/room-2-00.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
-            { src: 'img/rooms-img/room-2-01.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
-            { src: 'img/rooms-img/room-2-02.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
-            { src: 'img/rooms-img/room-2-03.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
-            { src: 'img/rooms-img/room-3-00.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
-            { src: 'img/rooms-img/room-3-01.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
-            { src: 'img/rooms-img/room-3-02.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
-            { src: 'img/rooms-img/room-3-03.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
-            { src: 'img/rooms-img/room-3-04.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
-            // Pool & Beach
-            { src: 'img/bg-img/bg-pool.jpg', cat: 'pool', caption: 'Swimming Pool' },
-            { src: 'img/bg-img/f-pool.jpg',  cat: 'pool', caption: 'Pool Area' },
-            { src: 'img/bg-img/bg-1.jpg',    cat: 'pool', caption: 'Beachside' },
-            { src: 'img/bg-img/bg-2.jpg',    cat: 'pool', caption: 'Beachside View' },
-            { src: 'img/bg-img/bg-3.jpg',    cat: 'pool', caption: 'Pool &amp; Sea' },
+            // { src: 'img/rooms-img/room-1-00.jpg', cat: 'rooms', caption: 'Deluxe Room' },
+            // { src: 'img/rooms-img/room-1-01.jpg', cat: 'rooms', caption: 'Deluxe Room' },
+            // { src: 'img/rooms-img/room-1-02.jpg', cat: 'rooms', caption: 'Deluxe Room' },
+            // { src: 'img/rooms-img/room-1-03.jpg', cat: 'rooms', caption: 'Deluxe Room' },
+            // { src: 'img/rooms-img/room-1-04.jpg', cat: 'rooms', caption: 'Deluxe Room' },
+            // { src: 'img/rooms-img/room-2-00.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
+            // { src: 'img/rooms-img/room-2-01.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
+            // { src: 'img/rooms-img/room-2-02.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
+            // { src: 'img/rooms-img/room-2-03.jpg', cat: 'rooms', caption: 'Family Suite Cityview' },
+            // { src: 'img/rooms-img/room-3-00.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
+            // { src: 'img/rooms-img/room-3-01.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
+            // { src: 'img/rooms-img/room-3-02.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
+            // { src: 'img/rooms-img/room-3-03.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
+            // { src: 'img/rooms-img/room-3-04.jpg', cat: 'rooms', caption: 'Family Suite Ocean' },
+            { src: 'img/room-g-img/001.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/002.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/003.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/004.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/005.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/006.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/007.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/008.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/009.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/010.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/011.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/012.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/013.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/014.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/015.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/016.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/017.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/018.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/019.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/020.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/021.jpg?v=1.1', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/022.png', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/023.png', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/024.png', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/025.png', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/026.png', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/027.png', cat: 'rooms', caption: 'Room' },
+            { src: 'img/room-g-img/028.png', cat: 'rooms', caption: 'Room' },
             // Dining
-            { src: 'img/bg-img/f-res.jpg',   cat: 'dining', caption: 'Restaurant' },
-            { src: 'img/bg-img/f-finbar.jpg', cat: 'dining', caption: 'Fin Bar' },
-            { src: 'img/bg-img/bg-9.jpg',    cat: 'dining', caption: 'Dining Experience' },
+            { src: 'img/dining-img/001.jpg?v=1.1',   cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/002.jpg?v=1.1', cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/003.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/004.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/005.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/006.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/007.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/008.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/009.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/010.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/011.png?v=1.1',   cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/012.jpg?v=1.1', cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/013.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/014.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/015.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/016.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/017.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/018.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/019.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/020.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/021.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/022.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/023.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
+            { src: 'img/dining-img/024.jpg?v=1.1',    cat: 'dining', caption: 'Dining' },
             // Facilities
-            { src: 'img/bg-img/bg-4.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
-            { src: 'img/bg-img/bg-5.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
-            { src: 'img/bg-img/bg-6.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
-            { src: 'img/bg-img/bg-7.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
-            { src: 'img/bg-img/bg-8.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
-            // Exterior
-            { src: 'img/bg-img/mix3-01.jpg', cat: 'exterior', caption: 'Hotel Exterior' },
-            { src: 'img/bg-img/mix3-02.jpg', cat: 'exterior', caption: 'Hotel Exterior' },
-            { src: 'img/bg-img/mix3-03.jpg', cat: 'exterior', caption: 'Hotel Exterior' },
-            { src: 'img/bg-img/bg-room.jpg', cat: 'exterior', caption: 'Hotel View' },
+            { src: 'img/facility-img/001.jpg', cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/facility-img/002.jpg',  cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/facility-img/003.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/facility-img/004.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/facility-img/005.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/facility-img/006.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/facility-img/007.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/facility-img/008.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/facility-img/009.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            { src: 'img/facility-img/010.jpg',    cat: 'facilities', caption: 'Hotel Facilities' },
+            // Meeting Room
+            { src: 'img/meeting-img/001.jpg?v=1', cat: 'meeting', caption: 'Meeting Room' },
+            { src: 'img/meeting-img/002.jpg', cat: 'meeting', caption: 'Meeting Room' },
+            { src: 'img/meeting-img/003.jpg', cat: 'meeting', caption: 'Meeting Room' },
+            { src: 'img/meeting-img/004.jpg', cat: 'meeting', caption: 'Meeting Room' },
+            { src: 'img/meeting-img/005.jpg', cat: 'meeting', caption: 'Meeting Room' },
+            { src: 'img/meeting-img/006.jpg', cat: 'meeting', caption: 'Meeting Room' },
         ];
 
         const BATCH = 9;
-        let currentFilter = 'all';
+        let currentFilter = 'rooms';
         let shownCount = 0;
         let filteredItems = [];
         let lightboxIndex = 0;
@@ -441,7 +501,7 @@
         const lbCaption = document.getElementById('lightboxCaption');
 
         function getFiltered() {
-            return currentFilter === 'all' ? ALL_ITEMS : ALL_ITEMS.filter(i => i.cat === currentFilter);
+            return ALL_ITEMS.filter(i => i.cat === currentFilter);
         }
 
         function renderBatch() {

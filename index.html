@@ -15,9 +15,22 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=5.9">
+    <link rel="stylesheet" href="style.css?v=6.5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+    <style>
+        /* Custom 16:9 aspect ratio for hero slider */
+        .single-hero-slide {
+            height: auto !important;
+            aspect-ratio: 16 / 9 !important;
+            min-height: 450px; /* Keeps the hero visually striking on desktops & tablets */
+        }
+        @media (max-width: 767px) {
+            .single-hero-slide {
+                min-height: 350px; /* Responsive height fallback for mobile devices */
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -87,19 +100,19 @@
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
                 <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-1.jpg?v=1.1);"></div>
+                <div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-1.jpg?v=1.2);"></div>
             </div>
 
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
                 <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-2.jpg?v=1.1);"></div>
+                <div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-2.jpg?v=1.2);"></div>
             </div>
 
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
                 <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-3.jpg?v=1.1);"></div>
+                <div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-3.jpg?v=1.2);"></div>
             </div>
 
         </div>
@@ -129,7 +142,7 @@ With 192 elegantly appointed rooms (218 bedrooms), each space is thoughtfully de
                             <h6><span class="fa fa-check"></span> Donec malesuada lorem maximus mauris sceleri</h6>
                             <h6><span class="fa fa-check"></span> Malesuada lorem maximus mauris sceleri</h6>
                         </div> -->
-                        <a href="#" class="btn palatin-btn mt-50">Read More</a>
+                        <!-- <a href="#" class="btn palatin-btn mt-50">Read More</a> -->
                     </div>
                 </div>
 
@@ -154,52 +167,156 @@ With 192 elegantly appointed rooms (218 bedrooms), each space is thoughtfully de
     </section>
     <!-- ##### About Us Area End ##### -->
 
-    <!-- ##### Pool Area Start ##### -->
-    <section class="pool-area section-padding-100 bg-img bg-fixed" style="background-image: url(img/bg-img/bg-pool.jpg);">
+    <!-- ##### Section 2 Start ##### -->
+    <section class="pool-area bg-img bg-fixed d-flex align-items-center" style="background-image: url(img/bg-img/bg-section2.png); min-height: 100vh; padding: 80px 0;">
         <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-12 col-lg-7">
-                    <div class="pool-content text-center wow fadeInUp" data-wow-delay="300ms" style="padding: 20px;">
-                        <div class="section-heading text-center white">
-                            <!-- <div class="line-"></div> -->
-                            <!-- <h2>Infinity Pool</h2> -->
-                            <p>Coco Beach Hotel Jomtien Pattaya offers a thoughtfully curated lifestyle experience designed for both relaxation and recreation. From serene poolside moments to family-friendly spaces and wellness facilities, every element is crafted to enhance your stay by the sea.</p>
-                        </div>
+            <!-- Header Title -->
+            <div class="row mb-5">
+                <div class="col-12 text-right text-center-mobile">
+                    <h2 class="highlights-title">Hotel Highlights</h2>
+                </div>
+            </div>
 
-                        <div class="row">
-                            <div class="col-12 col-sm-6">
-                                <div class="pool-feature" style="margin-bottom: 30px;">
-                                    <i class="icon-cocktail" style="color: white;"></i>
-                                    <p style="color: white;">Bliss Pool Bar</p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="pool-feature" style="margin-bottom: 30px;">
-                                    <i class="icon-swimming-pool" style="color: white;"></i>
-                                    <p style="color: white;">Swiming Pool</p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="pool-feature" style="margin-bottom: 30px;">
-                                    <i class="fa-solid fa-child-reaching" style="color: white;"></i>
-                                    <p style="color: white;">Kid-Friendly Playground</p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="pool-feature" style="margin-bottom: 30px;">
-                                    <i class="fa-solid fa-dumbbell" style="color: white;"></i>
-                                    <p style="color: white;">Fitness Center</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Button -->
-                        <a href="facilities" class="btn palatin-btn mt-3">Read More</a>
+            <!-- Highlights Grid -->
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                    <div class="highlight-box">
+                        <!-- <div class="highlight-icon"><i class="icon-resort"></i></div> -->
+                        <div class="highlight-number"><span class="counter">192</span></div>
+                        <h4 class="highlight-label">Rooms</h4>
+                        <p class="highlight-desc">Modern designed with sea & pool views</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                    <div class="highlight-box">
+                        <!-- <div class="highlight-icon"><i class="icon-swimming-pool"></i></div> -->
+                        <div class="highlight-number"><span class="counter">218</span></div>
+                        <h4 class="highlight-label">Bedrooms</h4>
+                        <p class="highlight-desc">Spacious layouts for comfort & family stays</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                    <div class="highlight-box">
+                        <!-- <div class="highlight-icon"><i class="icon-restaurant"></i></div> -->
+                        <div class="highlight-number"><span class="counter">200</span></div>
+                        <h4 class="highlight-label">Dining Seats</h4>
+                        <p class="highlight-desc">At Siam – All-Day Dining Restaurant</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="highlight-box">
+                        <!-- <div class="highlight-icon"><i class="icon-cocktail-1"></i></div> -->
+                        <div class="highlight-number"><span class="counter">400</span></div>
+                        <h4 class="highlight-label">Event Capacity</h4>
+                        <p class="highlight-desc">Meeting & Ballroom spaces for every occasion</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ##### Pool Area End ##### -->
+    <!-- ##### Section 2 End ##### -->
+
+    <style>
+        .highlights-title {
+            color: #055c9d;
+            font-size: 36px;
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background-color: rgba(14, 25, 38, 0.72);
+            border: 2px solid #055c9d;
+            padding: 45px 25px;
+            min-height: 440px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: all 400ms ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .highlight-box:hover {
+            background-color: rgba(14, 25, 38, 0.85);
+            border-color: #0088ff;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .highlight-icon {
+            margin-bottom: 20px;
+        }
+        .highlight-icon i {
+            font-size: 56px;
+            color: #ffffff;
+            display: inline-block;
+            transition: all 300ms ease;
+        }
+        .highlight-box:hover .highlight-icon i {
+            color: #0088ff;
+            transform: scale(1.1);
+        }
+
+        .highlight-number {
+            font-size: 68px;
+            color: #ffffff;
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 5px;
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+        }
+
+        .highlight-label {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+        }
+
+        .highlight-desc {
+            font-size: 14px;
+            color: #ffffff;
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 0;
+            font-weight: 300;
+        }
+
+        @media (max-width: 991px) {
+            .highlight-box {
+                min-height: 380px;
+                padding: 40px 20px;
+            }
+            .highlight-number {
+                font-size: 56px;
+            }
+            .highlight-label {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .text-center-mobile {
+                text-align: center !important;
+            }
+            .highlights-title {
+                font-size: 28px;
+            }
+        }
+    </style>
 
     <!-- ##### Rooms Area Start ##### -->
     <section class="rooms-area section-padding-100-0">
@@ -274,6 +391,56 @@ With 192 elegantly appointed rooms (218 bedrooms), each space is thoughtfully de
         </div>
     </section>
     <!-- ##### Rooms Area End ##### -->
+
+
+    <!-- ##### Pool Area Start ##### -->
+    <section class="pool-area bg-img bg-fixed d-flex align-items-center" style="background-image: url(img/bg-img/bg-pool.jpg); min-height: 100vh; padding: 50px 0;">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-12 col-lg-7">
+                    <div class="pool-content text-center wow fadeInUp" data-wow-delay="300ms" style="padding: 20px;">
+                        <div class="section-heading text-center white">
+                            <!-- <div class="line-"></div> -->
+                            <!-- <h2>Infinity Pool</h2> -->
+                            <p>Coco Beach Hotel Jomtien Pattaya offers a thoughtfully curated lifestyle experience designed for both relaxation and recreation. From serene poolside moments to family-friendly spaces and wellness facilities, every element is crafted to enhance your stay by the sea.</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="pool-feature" style="margin-bottom: 30px;">
+                                    <i class="icon-cocktail" style="color: white;"></i>
+                                    <p style="color: white;">Indoor & Pool Bar</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="pool-feature" style="margin-bottom: 30px;">
+                                    <i class="icon-swimming-pool" style="color: white;"></i>
+                                    <p style="color: white;">Swiming Pool</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="pool-feature" style="margin-bottom: 30px;">
+                                    <i class="fa-solid fa-child-reaching" style="color: white;"></i>
+                                    <p style="color: white;">Kid-Friendly Playground</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="pool-feature" style="margin-bottom: 30px;">
+                                    <i class="fa-solid fa-dumbbell" style="color: white;"></i>
+                                    <p style="color: white;">Fitness Center</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <!-- <a href="facilities" class="btn palatin-btn mt-3">Read More</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Pool Area End ##### -->
+
+    
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">

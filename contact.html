@@ -15,9 +15,21 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=5.9">
+    <link rel="stylesheet" href="style.css?v=6.4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+    <style>
+        /* Custom aspect ratio 16:9 for contact page header */
+        .breadcumb-area {
+            height: auto !important;
+            aspect-ratio: 16 / 9 !important;
+            min-height: 450px; /* Striking banner height for desktops & tablets */
+        }
+        @media (max-width: 767px) {
+            .breadcumb-area {
+                min-height: 300px; /* Responsive banner fallback for mobile */
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -82,7 +94,7 @@
 
     <!-- ##### Breadcumb Area Start ##### -->
     <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center"
-        style="background-image: url(img/bg-img/bg-8.jpg);">
+        style="background-image: url(img/bg-img/bg-contact2.png);">
         <!-- <div class="bradcumbContent">
             <h2>Contact</h2>
         </div> -->
@@ -95,28 +107,24 @@
     <!-- ##### Book Now Area End ##### -->
 
     <!-- ##### Contact Area Start ##### -->
-    <section class="contact-information-area">
+    <!-- <section class="contact-information-area">
         <div class="container">
             <div class="row">
 
-                <!-- Single Contact Information -->
                 <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
                             <h3>Ibiza</h3>
                             <p>Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum.</p>
                         </div>
-                        <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>Address</p>
                             <p>1481 Creekside Lane <br>Avila Beach, CA 931</p>
                         </div>
-                        <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>Phone</p>
                             <p>+36 345 7953 4994</p>
                         </div>
-                        <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>E-mail</p>
                             <p>yourmail@gmail.com</p>
@@ -124,24 +132,20 @@
                     </div>
                 </div>
 
-                <!-- Single Contact Information -->
                 <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
                             <h3>Los Angeles</h3>
                             <p>Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Integer tempus ligula sem.</p>
                         </div>
-                        <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>Address</p>
                             <p>245 Principe Lane <br>Avila Beach, Spain</p>
                         </div>
-                        <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>Phone</p>
                             <p>+36 345 7953 4994</p>
                         </div>
-                        <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>E-mail</p>
                             <p>yourmail@gmail.com</p>
@@ -149,24 +153,20 @@
                     </div>
                 </div>
 
-                <!-- Single Contact Information -->
                 <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
                             <h3>Dubai</h3>
                             <p>Fusce blandit consequat elit non egestas. Donec tortor odio, consectetur eu justo ut.</p>
                         </div>
-                        <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>Address</p>
                             <p>889 Creekside Lane <br>Avila Beach, Dubai</p>
                         </div>
-                        <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>Phone</p>
                             <p>+77 345 7953 2406</p>
                         </div>
-                        <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>E-mail</p>
                             <p>yourmail@gmail.com</p>
@@ -176,7 +176,7 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- ##### Contact Area End ##### -->
 
     <!-- ##### Contact Form Area Start ##### -->
@@ -221,7 +221,7 @@
     <!-- ##### Contact Form Area End ##### -->
 
     <!-- ##### Google Maps ##### -->
-    <div class="map-area mb-100">
+    <!-- <div class="map-area mb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -231,7 +231,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">

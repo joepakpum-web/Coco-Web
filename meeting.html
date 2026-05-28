@@ -11,13 +11,175 @@
     <!-- Title -->
     <title>Coco Beach Hotel &amp; Jomtien, Pattaya</title>
 
-    <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
 
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=5.9">
+    <link rel="stylesheet" href="style.css?v=6.4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .breadcumb-area {
+            height: auto !important;
+            aspect-ratio: 16 / 9 !important;
+            min-height: 450px; /* Striking banner height for desktops & tablets */
+        }
+        @media (max-width: 767px) {
+            .breadcumb-area {
+                min-height: 300px; /* Responsive banner fallback for mobile */
+            }
+        }
+        /* ----- Custom Styles for Meeting Page ----- */
+        .meeting-intro-section {
+            background-color: #051529;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            text-align: center;
+            padding: 80px 0;
+        }
+        .meeting-intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .meeting-intro-title {
+            font-size: 20px;
+            color: #ffffff;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            line-height: 1.6;
+        }
+        .meeting-intro-desc {
+            font-size: 15px;
+            color: #d1d5db;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        .meeting-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 40px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        .meeting-highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: 400;
+        }
+        .check-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: #0076c0;
+            color: #ffffff;
+            border-radius: 50%;
+            font-size: 11px;
+        }
+        .meeting-divider {
+            width: 250px;
+            height: 1.5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 40px auto;
+        }
+        .proposal-btn {
+            background-color: #ffffff;
+            color: #051529;
+            font-weight: 500;
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-size: 15px;
+            display: inline-block;
+            transition: all 300ms ease;
+            border: 2px solid #ffffff;
+            margin-top: 10px;
+            text-transform: none;
+        }
+        .proposal-btn:hover {
+            background-color: transparent;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .meeting-svg-icon {
+            color: #ffffff;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
 
+        /* Room Capacity Table Section */
+        .capacity-table-section {
+            background-color: #fcfcf9; /* soft off-white/beige background */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            padding: 80px 0;
+        }
+        .capacity-table-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+        .capacity-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .capacity-table th {
+            font-weight: 700;
+            color: #051529;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            padding: 20px 10px;
+            border-bottom: 2px solid #edf2f7;
+            text-transform: uppercase;
+        }
+        .capacity-table th .icon-wrapper {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .capacity-table td {
+            padding: 24px 15px;
+            border-bottom: 1px solid #edf2f7;
+            vertical-align: middle;
+            font-size: 15px;
+            color: #4a5568;
+        }
+        .capacity-table td.room-name-cell {
+            text-align: left;
+            padding-left: 0;
+        }
+        .room-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #051529;
+            margin-bottom: 6px;
+        }
+        .room-dimensions {
+            display: inline-block;
+            background-color: #055c9d;
+            color: #ffffff;
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .pax-value {
+            font-weight: 600;
+            color: #4a5568;
+        }
+    </style>
 </head>
 
 <body>
@@ -81,200 +243,201 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/bg-2.jpg);">
+    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/bg-meeting2.png);">
         <!-- <div class="bradcumbContent">
             <h2>Meeting</h2>
         </div> -->
     </section>
     <!-- ##### Breadcumb Area End ##### -->
 
-    <!-- ##### Book Now Area Start ##### -->
-    <div class="book-now-area">
-        
-    </div>
-    <!-- ##### Book Now Area End ##### -->
-
-    <!-- ##### About Us Area Start ##### -->
-    <section class="about-us-area">
+    <!-- ##### Meeting Content Start ##### -->
+    <section class="meeting-intro-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-6">
-                    <div class="about-text mb-100">
-                        <div class="section-heading">
-                            <div class="line-"></div>
-                            <h2>A place to remember</h2>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-                        <a href="#" class="btn palatin-btn mt-50">Read More</a>
-                    </div>
-                </div>
+            <div class="meeting-intro-content">
+                <h3 class="meeting-intro-title">
+                    Your Event, Perfectly Planned by the Sea<br>
+                    At Coco Beach Hotel Jomtien Pattaya, every event is thoughtfully supported with spacious venues, flexible layouts, and professional hospitality services.
+                </h3>
+                <p class="meeting-intro-desc">
+                    Whether hosting an intimate executive meeting or a large-scale conference, our event spaces are designed to create seamless and memorable experiences.
+                </p>
+            </div>
 
-                <div class="col-12 col-lg-6">
-                    <div class="about-thumbnail mb-100">
-                        <img src="img/bg-img/2.jpg" alt="">
-                    </div>
+            <div class="meeting-highlights">
+                <div class="meeting-highlight-item">
+                    <span class="check-circle"><i class="fa fa-check"></i></span>
+                    Capacity 40–900 Guests
                 </div>
+                <div class="meeting-highlight-item">
+                    <span class="check-circle"><i class="fa fa-check"></i></span>
+                    Flexible Layouts
+                </div>
+                <div class="meeting-highlight-item">
+                    <span class="check-circle"><i class="fa fa-check"></i></span>
+                    Professional Service
+                </div>
+                <div class="meeting-highlight-item">
+                    <span class="check-circle"><i class="fa fa-check"></i></span>
+                    Beachfront Location
+                </div>
+                <div class="meeting-highlight-item">
+                    <span class="check-circle"><i class="fa fa-check"></i></span>
+                    Flexible package
+                </div>
+            </div>
+
+            <div class="meeting-divider"></div>
+
+            <div class="meeting-proposal-area">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meeting-svg-icon">
+                    <path d="M12 44h40l-4 8H16z" />
+                    <circle cx="20" cy="30" r="4" />
+                    <path d="M14 40a6 6 0 0 1 12 0" />
+                    <circle cx="44" cy="30" r="4" />
+                    <path d="M38 40a6 6 0 0 1 12 0" />
+                    <circle cx="32" cy="20" r="4" />
+                    <path d="M26 30a6 6 0 0 1 12 0" />
+                    <rect x="20" y="6" width="24" height="14" rx="1" stroke-dasharray="2 2" />
+                    <path d="M32 2v4" />
+                </svg>
+                <br>
+                <a href="#" class="proposal-btn">Request Proposal</a>
             </div>
         </div>
     </section>
-    <!-- ##### About Us Area End ##### -->
 
-    <!-- ##### Milestones Area Start ##### -->
-    <section class="our-milestones section-padding-100-0 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/bg-4.jpg);">
+    <section class="capacity-table-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-8">
-                    <div class="section-heading text-center white">
-                        <div class="line-"></div>
-                        <h2>Our Milestones</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-
-                <!-- Single Cool Facts -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-cool-fact mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="scf-text">
-                            <i class="icon-cocktail-1"></i>
-                            <h2><span class="counter">231</span></h2>
-                            <p>Cocktails/day</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Cool Facts -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-cool-fact mb-100 wow fadeInUp" data-wow-delay="500ms">
-                        <div class="scf-text">
-                            <i class="icon-swimming-pool"></i>
-                            <h2><span class="counter">3</span></h2>
-                            <p>Pools</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Cool Facts -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-cool-fact mb-100 wow fadeInUp" data-wow-delay="700ms">
-                        <div class="scf-text">
-                            <i class="icon-resort"></i>
-                            <h2><span class="counter">79</span></h2>
-                            <p>Rooms</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Cool Facts -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-cool-fact mb-100 wow fadeInUp" data-wow-delay="900ms">
-                        <div class="scf-text">
-                            <i class="icon-restaurant"></i>
-                            <h2><span class="counter">25</span></h2>
-                            <p>Apartments</p>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="capacity-table-container">
+                <table class="capacity-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 35%; text-align: left;"></th>
+                            <th style="width: 13%;">
+                                <div class="icon-wrapper">
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#031830" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="9" width="20" height="5" rx="1.5" />
+                                        <path d="M6 14v4M18 14v4" />
+                                        <circle cx="8" cy="5" r="2" />
+                                        <circle cx="16" cy="5" r="2" />
+                                        <path d="M5 7c0 1 1 1 1 1h4M13 7c0 1 1 1 1 1h4" />
+                                    </svg>
+                                </div>
+                                Class Room
+                            </th>
+                            <th style="width: 13%;">
+                                <div class="icon-wrapper">
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#031830" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 5v12c0 2.2 1.8 4 4 4h8c2.2 0 4-1.8 4-4V5" />
+                                        <path d="M8 5h3M13 5h3" />
+                                        <circle cx="3" cy="10" r="1.2" />
+                                        <circle cx="8" cy="21.5" r="1.2" />
+                                        <circle cx="16" cy="21.5" r="1.2" />
+                                        <circle cx="21" cy="10" r="1.2" />
+                                    </svg>
+                                </div>
+                                U Shape
+                            </th>
+                            <th style="width: 13%;">
+                                <div class="icon-wrapper">
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#031830" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 3h18L12 12z" />
+                                        <path d="M12 12v9M8 21h8" />
+                                        <circle cx="15" cy="6" r="1.5" fill="#dfba6b" stroke="none" />
+                                    </svg>
+                                </div>
+                                Cocktail
+                            </th>
+                            <th style="width: 13%;">
+                                <div class="icon-wrapper">
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#031830" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="5" />
+                                        <circle cx="6" cy="12" r="1.5" />
+                                        <circle cx="18" cy="12" r="1.5" />
+                                        <circle cx="12" cy="6" r="1.5" />
+                                        <circle cx="12" cy="18" r="1.5" />
+                                    </svg>
+                                </div>
+                                Dinner
+                            </th>
+                            <th style="width: 13%;">
+                                <div class="icon-wrapper">
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#031830" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="5" width="4" height="4" rx="1" />
+                                        <rect x="8" y="5" width="4" height="4" rx="1" />
+                                        <rect x="14" y="5" width="4" height="4" rx="1" />
+                                        <rect x="20" y="5" width="4" height="4" rx="1" />
+                                        <rect x="2" y="13" width="4" height="4" rx="1" />
+                                        <rect x="8" y="13" width="4" height="4" rx="1" />
+                                        <rect x="14" y="13" width="4" height="4" rx="1" />
+                                        <rect x="20" y="13" width="4" height="4" rx="1" />
+                                    </svg>
+                                </div>
+                                Theater
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="room-name-cell">
+                                <div class="room-title">Royal Grand Ballroom 1</div>
+                                <span class="room-dimensions">20 x 15 m | Ceiling 6 m</span>
+                            </td>
+                            <td><span class="pax-value">250 PAX</span></td>
+                            <td><span class="pax-value">100 PAX</span></td>
+                            <td><span class="pax-value">350 PAX</span></td>
+                            <td><span class="pax-value">250 PAX</span></td>
+                            <td><span class="pax-value">250 PAX</span></td>
+                        </tr>
+                        <tr>
+                            <td class="room-name-cell">
+                                <div class="room-title">Royal Grand Ballroom 2</div>
+                                <span class="room-dimensions">15 x 15 m | Ceiling 6 m</span>
+                            </td>
+                            <td><span class="pax-value">150 PAX</span></td>
+                            <td><span class="pax-value">50 PAX</span></td>
+                            <td><span class="pax-value">250 PAX</span></td>
+                            <td><span class="pax-value">180 PAX</span></td>
+                            <td><span class="pax-value">180 PAX</span></td>
+                        </tr>
+                        <tr>
+                            <td class="room-name-cell">
+                                <div class="room-title">Royal Grand Ballroom 1+2</div>
+                                <span class="room-dimensions">35 x 15 m | Ceiling 6 m</span>
+                            </td>
+                            <td><span class="pax-value">400 PAX</span></td>
+                            <td><span class="pax-value">150 PAX</span></td>
+                            <td><span class="pax-value">500 PAX</span></td>
+                            <td><span class="pax-value">450 PAX</span></td>
+                            <td><span class="pax-value">450 PAX</span></td>
+                        </tr>
+                        <tr>
+                            <td class="room-name-cell">
+                                <div class="room-title">Coco Meeting Room</div>
+                                <span class="room-dimensions">22 x 6.5 m | Ceiling 3 m</span>
+                            </td>
+                            <td><span class="pax-value">60 PAX</span></td>
+                            <td><span class="pax-value">35 PAX</span></td>
+                            <td><span class="pax-value">70 PAX</span></td>
+                            <td><span class="pax-value">60 PAX</span></td>
+                            <td><span class="pax-value">60 PAX</span></td>
+                        </tr>
+                        <tr>
+                            <td class="room-name-cell">
+                                <div class="room-title">Executive Meeting Room</div>
+                                <span class="room-dimensions">18 x 4.5 m | Ceiling 3 m</span>
+                            </td>
+                            <td><span class="pax-value">30 PAX</span></td>
+                            <td><span class="pax-value">25 PAX</span></td>
+                            <td><span class="pax-value">40 PAX</span></td>
+                            <td><span class="pax-value">40 PAX</span></td>
+                            <td><span class="pax-value">40 PAX</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
-    <!-- ##### Milestones Area End ##### -->
-
-    <!-- ##### Hotels Area Start ##### -->
-    <section class="our-hotels-area section-padding-100-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <div class="line-"></div>
-                        <h2>Our Hotel</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <!-- Single Hotel Info -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-hotel-info mb-100">
-                        <div class="hotel-info-text">
-                            <h6><span class="fa fa-check"></span> Donec malesuada lorem maximus mauris</h6>
-                            <h6><span class="fa fa-check"></span> Integer tempus ligula sem, id feugiat</h6>
-                            <h6><span class="fa fa-check"></span> Malesuada lorem maximus mauris sceleri </h6>
-                        </div>
-                        <div class="hotel-img">
-                            <img src="img/bg-img/3.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Hotel Info -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-hotel-info mb-100">
-                        <div class="hotel-info-text">
-                            <h6><span class="fa fa-check"></span> Tempus ligula sem, id feugiat quam</h6>
-                            <h6><span class="fa fa-check"></span> Integer tempus ligula sem, id feugiat</h6>
-                            <h6><span class="fa fa-check"></span> Esuada lorem maximus mauris sceleri</h6>
-                        </div>
-                        <div class="hotel-img">
-                            <img src="img/bg-img/10.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Hotel Info -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-hotel-info mb-100">
-                        <div class="hotel-info-text">
-                            <h6><span class="fa fa-check"></span> Tempus ligula sem, id feugiat quam</h6>
-                            <h6><span class="fa fa-check"></span> Integer tempus ligula sem, id feugiat</h6>
-                            <h6><span class="fa fa-check"></span> Esuada lorem maximus mauris sceleri</h6>
-                        </div>
-                        <div class="hotel-img">
-                            <img src="img/bg-img/11.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Hotels Area End ##### -->
-
-    <!-- ##### Testimonial Area Start ##### -->
-    <section class="testimonial-area section-padding-100 bg-img" style="background-image: url(img/core-img/pattern.png);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="testimonial-content">
-                        <div class="section-heading text-center">
-                            <div class="line-"></div>
-                            <h2>What Clients Say</h2>
-                        </div>
-                        
-                        <!-- Testimonial Slides -->
-                        <div class="testimonial-slides owl-carousel">
-                            
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-                                <h6>Michael Smith, <span>Client</span></h6>
-                                <img src="img/core-img/trip.png" alt="">
-                            </div>
-                            
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-                                <h6>Nazrul Islam, <span>Developer</span></h6>
-                                <img src="img/core-img/trip.png" alt="">
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Testimonial Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">

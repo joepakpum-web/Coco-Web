@@ -15,8 +15,405 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=5.9">
+    <link rel="stylesheet" href="style.css?v=6.4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Google Fonts for At Siam Premium Theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .breadcumb-area {
+            height: auto !important;
+            aspect-ratio: 16 / 9 !important;
+            min-height: 450px; /* Striking banner height for desktops & tablets */
+        }
+        @media (max-width: 767px) {
+            .breadcumb-area {
+                min-height: 300px; /* Responsive banner fallback for mobile */
+            }
+        }
+        /* ---- At Siam Page Styles ---- */
+        .atsiam-hero-section {
+            background-color: #112317;
+            min-height: 80vh;
+            padding: 100px 0;
+            color: #ffffff;
+            overflow: hidden;
+            position: relative;
+        }
+        .atsiam-logo-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        /* Logo design */
+        .gold-sparks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .gold-sparks .spark {
+            color: #dfba6b;
+            position: absolute;
+            font-size: 20px;
+            text-shadow: 0 0 8px rgba(223,186,107,0.6);
+        }
+        .gold-sparks .s-1 { top: -20px; left: 10px; font-size: 24px; animation: pulse 2s infinite ease-in-out; }
+        .gold-sparks .s-2 { top: -5px; right: -15px; font-size: 16px; animation: pulse 2.5s infinite ease-in-out; }
+        .gold-sparks .s-3 { bottom: 10px; left: -25px; font-size: 14px; animation: pulse 1.8s infinite ease-in-out; }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .atsiam-logo-thai {
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-size: 78px;
+            font-weight: 700;
+            color: #dfba6b;
+            letter-spacing: 2px;
+            line-height: 1;
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .atsiam-logo-separator {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #dfba6b, transparent);
+            margin: 12px auto;
+            width: 160px;
+        }
+        .atsiam-logo-eng {
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: #dfba6b;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            margin: 0 0 0 12px;
+            line-height: 1;
+        }
+        .atsiam-hero-desc {
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #dddddd;
+            max-width: 440px;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+        
+        /* Overlapping Collage */
+        .hero-right-collage {
+            position: relative;
+            height: 480px;
+            width: 100%;
+        }
+        .collage-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .collage-item {
+            position: absolute;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+            transition: all 400ms ease;
+        }
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .collage-item:hover {
+            transform: scale(1.03) translateY(-5px);
+            z-index: 10 !important;
+        }
+        .collage-item.main-dish {
+            width: 320px;
+            height: 320px;
+            top: 60px;
+            left: 20px;
+            border-radius: 50%;
+            border: 4px solid #dfba6b;
+            z-index: 2;
+        }
+        .collage-item.top-dish {
+            width: 250px;
+            height: 250px;
+            top: 0px;
+            right: 40px;
+            border-radius: 50%;
+            border: 3px solid #dfba6b;
+            z-index: 1;
+        }
+        .collage-item.bottom-dish {
+            width: 260px;
+            height: 260px;
+            bottom: 0px;
+            right: 0px;
+            border-radius: 50%;
+            border: 4px solid #dfba6b;
+            z-index: 3;
+        }
+
+        /* Intro Section */
+        .atsiam-intro-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .intro-right-content {
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+            backdrop-filter: none;
+        }
+        .arched-img {
+            width: 100%;
+            max-width: 500px;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 250px 250px 0 0;
+            border: 5px solid #dfba6b;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .intro-title {
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-size: 64px;
+            color: #1c3325;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .gold-wavy-divider {
+            margin-bottom: 25px;
+        }
+        .intro-text {
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-size: 18px;
+            line-height: 1.9;
+            color: #445648;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+        .text-gold {
+            color: #dfba6b;
+        }
+        .thai-ornaments {
+            display: flex;
+            gap: 15px;
+        }
+        .thai-ornaments .ornament {
+            font-size: 24px;
+            opacity: 0.85;
+            animation: float 3s infinite ease-in-out alternate;
+        }
+        .thai-ornaments .ornament:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-8px) rotate(15deg); }
+        }
+
+        /* Signature Section */
+        .atsiam-signature-section {
+            background-color: #1c3826;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .signature-section-title {
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-size: 38px;
+            color: #dfba6b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .signature-card {
+            background: rgba(17, 35, 23, 0.6);
+            border: 1px solid rgba(223, 186, 107, 0.25);
+            padding: 35px 25px;
+            transition: all 400ms ease;
+            height: 100%;
+        }
+        .signature-card:hover {
+            transform: translateY(-8px);
+            background: rgba(17, 35, 23, 0.85);
+            border-color: #dfba6b;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        .signature-card-img {
+            width: 100%;
+            height: 220px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        .signature-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 500ms ease;
+        }
+        .signature-card:hover .signature-card-img img {
+            transform: scale(1.06);
+        }
+        .signature-card-title {
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-size: 22px;
+            color: #dfba6b;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .signature-card-desc {
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #dddddd;
+            margin-bottom: 20px;
+            font-weight: 300;
+            min-height: 48px;
+        }
+        .signature-gold-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #dfba6b, transparent);
+            width: 100px;
+            margin: 0 auto;
+        }
+
+        /* Collage Grid & Opening Hours Section */
+        .atsiam-collage-hours-section {
+            background-color: #f7f7f7;
+        }
+        .collage-box {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        .collage-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 500ms ease;
+        }
+        .collage-box:hover img {
+            transform: scale(1.05);
+        }
+        .atsiam-collage-hours-section .ratio-1 {
+            height: 300px;
+        }
+        .atsiam-collage-hours-section .ratio-2 {
+            height: 600px;
+        }
+        .opening-hours-box {
+            height: 300px;
+            background-color: #112317;
+            padding: 30px;
+        }
+        .opening-hours-content {
+            border: 2px solid #dfba6b;
+            padding: 30px 20px;
+            width: 100%;
+        }
+        .hours-title {
+            color: #dfba6b;
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .hours-time {
+            color: #ffffff;
+            font-family: 'Canva Sans', 'Inter', sans-serif;
+            font-size: 14px;
+            margin-bottom: 0;
+            letter-spacing: 0.5px;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .atsiam-hero-section {
+                padding: 60px 0;
+            }
+            .atsiam-logo-thai { font-size: 64px; }
+            .atsiam-logo-eng { font-size: 18px; letter-spacing: 8px; }
+            .hero-right-collage {
+                height: 400px;
+                margin-top: 40px;
+            }
+            .collage-item.main-dish { width: 260px; height: 260px; top: 50px; left: 10px; }
+            .collage-item.top-dish { width: 200px; height: 200px; right: 20px; }
+            .collage-item.bottom-dish { width: 210px; height: 210px; right: 0; }
+            
+            .atsiam-collage-hours-section .ratio-1,
+            .opening-hours-box {
+                height: 260px;
+            }
+            .atsiam-collage-hours-section .ratio-2 {
+                height: 520px;
+            }
+        }
+        @media (max-width: 767px) {
+            .intro-title { font-size: 42px; }
+            .arched-img {
+                max-width: 320px;
+                height: 400px;
+                border-radius: 160px 160px 0 0;
+                margin-bottom: 30px;
+            }
+            .hero-right-collage {
+                height: 320px;
+            }
+            .collage-item.main-dish { width: 200px; height: 200px; top: 40px; left: 0px; }
+            .collage-item.top-dish { width: 160px; height: 160px; right: 10px; }
+            .collage-item.bottom-dish { width: 170px; height: 170px; }
+            
+            .atsiam-collage-hours-section .ratio-1,
+            .opening-hours-box,
+            .atsiam-collage-hours-section .ratio-2 {
+                height: 280px;
+            }
+            .intro-right-content {
+                padding: 0 15px;
+            }
+            .atsiam-signature-section {
+                padding: 60px 0;
+            }
+        }
+
+        /* Navbar Menu Custom Background Color (#1c2e1f) with top transparency for Dining page */
+        .header-area .palatin-main-menu {
+            background-color: rgba(28, 46, 31, 0.4) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .header-area .is-sticky .palatin-main-menu {
+            background-color: #1c2e1f !important;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+        @media only screen and (max-width: 991px) {
+            .breakpoint-on .classy-navbar .classy-menu {
+                background-color: #1c2e1f !important;
+            }
+        }
+        .footer-area {
+            background-color: #1c2e1f !important;
+        }
+    </style>
 
 </head>
 
@@ -80,621 +477,147 @@
     </header>
     <!-- ##### Header Area End ##### -->
 
-    <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center"
-        style="background-image: url(img/bg-img/bg-9.jpg);">
+    <!-- ##### Section 1: Hero Banner (At Siam) ##### -->
+    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(img/bg-img/bg-dining-n.jpg);">
         <!-- <div class="bradcumbContent">
-            <h2>Dining</h2>
+            <h2>Facilities</h2>
         </div> -->
     </section>
-    <!-- ##### Breadcumb Area End ##### -->
 
-    <!-- ##### Book Now Area Start ##### -->
-    <div class="book-now-area">
-    </div>
-    <!-- ##### Book Now Area End ##### -->
-
-    <!-- ##### Elements Area Start ##### -->
-    <section class="elements-area">
+    <!-- ##### Section 2: At Siam Intro ##### -->
+    <section class="atsiam-intro-section section-padding-100 bg-img" style="background-image: url('img/bg-img/bg-dining-2.jpg');">
         <div class="container">
-            <div class="row">
-
-                <!-- ##### Buttons ##### -->
-                <div class="col-12">
-                    <div class="elements-title">
-                        <h2>Buttons</h2>
-                    </div>
-                    <!-- Buttons -->
-                    <div class="palatin-buttons-area mb-100">
-                        <a href="#" class="btn palatin-btn m-2">Send message</a>
-                        <a href="#" class="btn palatin-btn btn-2 m-2">Send message</a>
-                        <a href="#" class="btn palatin-btn btn-3 m-2">Send message</a>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-7 mb-7 mb-md-0">
+                    <div class="intro-left-img text-center">
+                        <img src="img/bg-img/dining-section2.jpg" alt="Restaurant Interior" class="arched-img">
                     </div>
                 </div>
-
-                <!-- ##### Progress Bars & Accordions ##### -->
-                <div class="col-12">
-                    <div class="elements-title">
-                        <h2>Accordians &amp; Tabs</h2>
-                    </div>
-                </div>
-
-                <!-- ##### Accordians ##### -->
-                <div class="col-12 col-lg-6">
-                    <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
-                        <!-- single accordian area -->
-                        <div class="panel single-accordion">
-                            <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne"
-                                    data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Sceleri sque, at
-                                    rutrum nulla dictum. Ut ac ligula
-                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                </a></h6>
-                            <div id="collapseOne" class="accordion-content collapse show">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem
-                                    maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien.
-                                    Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet.</p>
-                            </div>
+                <div class="col-12 col-md-5">
+                    <div class="intro-right-content pl-md-5">
+                        <h2 class="intro-title">At Siam</h2>
+                        <div class="gold-wavy-divider" style="max-width: 420px; display: flex; align-items: center; gap: 10px; margin-bottom: 30px;">
+                            <div style="flex: 1; height: 2px; background-color: #dfba6b;"></div>
+                            <svg width="24" height="12" viewBox="0 0 24 12" fill="none">
+                                <path d="M0 6C4 6 6 2 12 2C18 2 20 6 24 6" stroke="#dfba6b" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M4 10C8 10 10 8 12 8C14 8 16 10 20 10" stroke="#dfba6b" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <div style="flex: 1; height: 2px; background-color: #dfba6b;"></div>
                         </div>
-                        <!-- single accordian area -->
-                        <div class="panel single-accordion">
-                            <h6>
-                                <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo"
-                                    data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">Consectetur
-                                    adipiscing elit. Donec malesuada
-                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                </a>
-                            </h6>
-                            <div id="collapseTwo" class="accordion-content collapse">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem
-                                    maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien.
-                                    Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                        <!-- single accordian area -->
-                        <div class="panel single-accordion">
-                            <h6>
-                                <a role="button" aria-expanded="true" aria-controls="collapseThree" class="collapsed"
-                                    data-parent="#accordion" data-toggle="collapse" href="#collapseThree">Ut ac ligula
-                                    sapien. Suspendisse cursus faucibus finibus.
-                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                </a>
-                            </h6>
-                            <div id="collapseThree" class="accordion-content collapse">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem
-                                    maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien.
-                                    Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- ##### Tabs ##### -->
-                <div class="col-12 col-lg-6">
-                    <div class="palatin-tabs-content">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link" id="tab--1" data-toggle="tab" href="#tab1" role="tab"
-                                    aria-controls="tab1" aria-selected="false">Mauris diam</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="tab--2" data-toggle="tab" href="#tab2" role="tab"
-                                    aria-controls="tab2" aria-selected="false">Ttristique sed posuere</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" id="tab--3" data-toggle="tab" href="#tab3" role="tab"
-                                    aria-controls="tab3" aria-selected="true">Lobortis eget metus</a>
-                            </li>
-                        </ul>
-
-                        <div class="tab-content mb-100" id="myTabContent">
-                            <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab--1">
-                                <div class="palatin-tab-content">
-                                    <!-- Tab Text -->
-                                    <div class="palatin-tab-text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada
-                                            lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula
-                                            sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab--2">
-                                <div class="palatin-tab-content">
-                                    <!-- Tab Text -->
-                                    <div class="palatin-tab-text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada
-                                            lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula
-                                            sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade show active" id="tab3" role="tabpanel" aria-labelledby="tab--3">
-                                <div class="palatin-tab-content">
-                                    <!-- Tab Text -->
-                                    <div class="palatin-tab-text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada
-                                            lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula
-                                            sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ##### Milestones ##### -->
-                <div class="col-12">
-                    <div class="elements-title">
-                        <h2>Milestones</h2>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="palatin-cool-facts-area">
-                        <div class="row">
-
-                            <!-- Single Cool Facts -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-cool-fact mb-100">
-                                    <div class="scf-text">
-                                        <i class="icon-cocktail-1"></i>
-                                        <h2><span class="counter">231</span></h2>
-                                        <p>Cocktails/day</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Cool Facts -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-cool-fact mb-100">
-                                    <div class="scf-text">
-                                        <i class="icon-swimming-pool"></i>
-                                        <h2><span class="counter">3</span></h2>
-                                        <p>Pools</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Cool Facts -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-cool-fact mb-100">
-                                    <div class="scf-text">
-                                        <i class="icon-resort"></i>
-                                        <h2><span class="counter">79</span></h2>
-                                        <p>Rooms</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Cool Facts -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-cool-fact mb-100">
-                                    <div class="scf-text">
-                                        <i class="icon-restaurant"></i>
-                                        <h2><span class="counter">25</span></h2>
-                                        <p>Apartments</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ##### Loaders ##### -->
-                <div class="col-12">
-                    <div class="elements-title">
-                        <h2>Loaders</h2>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <!-- Loaders Area Start -->
-                    <div class="our-skills-area">
-                        <div class="row">
-
-                            <!-- Single Skills Area -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-skils-area mb-100">
-                                    <div id="circle" class="circle" data-value="0.90">
-                                        <div class="skills-text">
-                                            <span>90%</span>
-                                            <p>Tourists</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Skills Area -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-skils-area mb-100">
-                                    <div id="circle2" class="circle" data-value="0.75">
-                                        <div class="skills-text">
-                                            <span>75%</span>
-                                            <p>Passion</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Skills Area -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-skils-area mb-100">
-                                    <div id="circle3" class="circle" data-value="1">
-                                        <div class="skills-text">
-                                            <span>100%</span>
-                                            <p>Satisfaction</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Skills Area -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-skils-area mb-100">
-                                    <div id="circle4" class="circle" data-value="0.80">
-                                        <div class="skills-text">
-                                            <span>80%</span>
-                                            <p>Fun</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ##### Icon Boxes ##### -->
-                <div class="col-12">
-                    <div class="elements-title">
-                        <h2>Icon Boxes</h2>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="row">
-
-                        <!-- Single Service Area -->
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="single-service-area mb-100">
-                                <i class="icon-trekking"></i>
-                                <h4>Bike Rentals</h4>
-                                <p>Nulla massa dui, posuere non erat in, eleifend mattis dui. Vivamus luctus luctus
-                                    rhoncus. Donec sagittis nulla id finibus iaculis. Mauris odio tortor.</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Service Area -->
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="single-service-area mb-100">
-                                <i class="icon-boat"></i>
-                                <h4>Boat Trips</h4>
-                                <p>Nulla massa dui, posuere non erat in, eleifend mattis dui. Vivamus luctus luctus
-                                    rhoncus. Donec sagittis nulla id finibus iaculis. Mauris odio tortor.</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Service Area -->
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="single-service-area mb-100">
-                                <i class="icon-restaurant"></i>
-                                <h4>Restaurants</h4>
-                                <p>Nulla massa dui, posuere non erat in, eleifend mattis dui. Vivamus luctus luctus
-                                    rhoncus. Donec sagittis nulla id finibus iaculis. Mauris odio tortor.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- ##### Icon Boxes ##### -->
-                <div class="col-12">
-                    <div class="elements-title">
-                        <h2>All Icons</h2>
-                    </div>
-                </div>
-
-                <div class="col-12 mb-100">
-                    <div class="row">
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-wallet"></i>
-                                <span>icon-wallet</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-trekking"></i>
-                                <span>icon-trekking</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-boarding-pass"></i>
-                                <span>icon-boarding-pass</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-train"></i>
-                                <span>icon-train</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-binoculars"></i>
-                                <span>icon-binoculars</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-swimming-pool"></i>
-                                <span>icon-swimming-pool</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-sunset"></i>
-                                <span>icon-sunset</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-sunglasses"></i>
-                                <span>icon-sunglasses</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-suitcase"></i>
-                                <span>icon-suitcase</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-goggle"></i>
-                                <span>icon-goggle</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-restaurant"></i>
-                                <span>icon-restaurant</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-postcard"></i>
-                                <span>icon-postcard</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-adaptor"></i>
-                                <span>icon-adaptor</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-photo"></i>
-                                <span>icon-photo</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-passport"></i>
-                                <span>icon-passport</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-navigation"></i>
-                                <span>icon-navigation</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-mountain"></i>
-                                <span>icon-mountain</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-map-1"></i>
-                                <span>icon-map-1</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-limousine"></i>
-                                <span>icon-limousine</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-landmark"></i>
-                                <span>icon-landmark</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-resort"></i>
-                                <span>icon-resort</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-sign"></i>
-                                <span>icon-sign</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-flip-flops"></i>
-                                <span>icon-flip-flops</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-map"></i>
-                                <span>icon-map</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-take-off"></i>
-                                <span>icon-take-off</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-boat"></i>
-                                <span>icon-boat</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-compass"></i>
-                                <span>icon-compass</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-cocktail-1"></i>
-                                <span>icon-cocktail-1</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-cocktail"></i>
-                                <span>icon-cocktail</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-credit-card"></i>
-                                <span>icon-credit-card</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-camera"></i>
-                                <span>icon-camera</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-calendar"></i>
-                                <span>icon-calendar</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-island"></i>
-                                <span>icon-island</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-beach"></i>
-                                <span>icon-beach</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-around"></i>
-                                <span>icon-around</span>
-                            </div>
-                        </div>
-
-                        <!-- Single Icon -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icon mb-30">
-                                <i class="icon-plane"></i>
-                                <span>icon-plane</span>
-                            </div>
-                        </div>
+                        <p class="intro-text">Inspired by the richness of local ingredients from the sea and the warmth of Thai culinary traditions, At Siam presents a modern interpretation of Thai and International cuisine.</p>
+                        <p class="intro-text">Each dish is thoughtfully crafted to reflect contemporary flavors while preserving the essence of authentic Thai hospitality, creating memorable dining moments by the sea.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ##### Elements Area End ##### -->
+
+    <!-- ##### Section 3: Signature Dishes ##### -->
+    <section class="atsiam-signature-section section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="signature-section-title">Signature Dishes Section</h2>
+                    <div class="gold-wavy-divider mx-auto mt-2">
+                        <svg width="80" height="15" viewBox="0 0 80 15" fill="none">
+                            <path d="M0 7.5C10 7.5 10 2 20 2C30 2 30 13 40 13C50 13 50 2 60 2C70 2 70 7.5 80 7.5" stroke="#dfba6b" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Dish 1 -->
+                <div class="col-12 col-md-4 mb-5 mb-md-0">
+                    <div class="signature-card text-center">
+                        <div class="signature-card-img">
+                            <img src="img/bg-img/dining-section3-1.jpg" alt="Dragon of the Ocean">
+                        </div>
+                        <h4 class="signature-card-title">Dragon of the Ocean</h4>
+                        <p class="signature-card-desc">Premium lobster-inspired seafood creation with modern Thai presentation.</p>
+                        <div class="signature-gold-line"></div>
+                    </div>
+                </div>
+                
+                <!-- Dish 2 -->
+                <div class="col-12 col-md-4 mb-5 mb-md-0">
+                    <div class="signature-card text-center">
+                        <div class="signature-card-img">
+                            <img src="img/bg-img/dining-section3-2.jpg" alt="Sea Food Inferno">
+                        </div>
+                        <h4 class="signature-card-title">Sea Food Inferno</h4>
+                        <p class="signature-card-desc">A vibrant seafood dish infused with bold flavors and contemporary coastal inspiration.</p>
+                        <div class="signature-gold-line"></div>
+                    </div>
+                </div>
+                
+                <!-- Dish 3 -->
+                <div class="col-12 col-md-4">
+                    <div class="signature-card text-center">
+                        <div class="signature-card-img">
+                            <img src="img/bg-img/dining-section3-3.jpg" alt="Lamb Shanks in Massaman">
+                        </div>
+                        <h4 class="signature-card-title">Lamb Shanks in Massaman</h4>
+                        <p class="signature-card-desc">Slow-cooked lamb shank served with rich Massaman curry in a refined Thai fusion style.</p>
+                        <div class="signature-gold-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ##### Section 4: Collage & Opening Hours ##### -->
+    <section class="atsiam-collage-hours-section">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <!-- Col 1 -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column">
+                    <div class="collage-box ratio-1">
+                        <img src="img/dining-page-img/001.jpg" alt="Mango Sticky Rice">
+                    </div>
+                    <div class="opening-hours-box d-flex flex-column justify-content-center align-items-center">
+                        <div class="opening-hours-content text-center">
+                            <h3 class="hours-title">Opening hours</h3>
+                            <p class="hours-time">Daily 6:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Col 2 -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column">
+                    <div class="collage-box ratio-1">
+                        <img src="img/dining-page-img/002.jpg" alt="Sweet Dessert">
+                    </div>
+                    <div class="collage-box ratio-1">
+                        <img src="img/dining-page-img/005.jpg" alt="Bread Roll">
+                    </div>
+                </div>
+                
+                <!-- Col 3 -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column">
+                    <div class="collage-box ratio-1">
+                        <img src="img/dining-page-img/003.jpg" alt="Black Pasta">
+                    </div>
+                    <div class="collage-box ratio-1">
+                        <img src="img/dining-page-img/006.jpg" alt="Club Sandwich">
+                    </div>
+                </div>
+                
+                <!-- Col 4 -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column">
+                    <div class="collage-box ratio-1">
+                        <img src="img/dining-page-img/004.jpg" alt="Black Pasta">
+                    </div>
+                    <div class="collage-box ratio-1">
+                        <img src="img/dining-page-img/007.jpg" alt="Club Sandwich">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
+    <footer class="footer-area" style="background-color: #1c2e1f !important;">
         <div class="container">
             <div class="row">
                 <!-- Left Side: Map & Message -->

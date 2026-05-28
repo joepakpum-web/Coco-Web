@@ -1,5 +1,6 @@
 @import 'theme_color';
 @import 'fonts';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import 'mixin';
 @import 'responsive';
 
@@ -39,12 +40,7 @@
 
 /* :: 1.0 Import Fonts */
 
-@font-face {
-    font-family: 'FuturaLT-Book';
-    src: url('fonts/FuturaLT-Book.eot?#iefix') format('embedded-opentype'), url('fonts/FuturaLT-Book.woff') format('woff'), url('fonts/FuturaLT-Book.ttf') format('truetype'), url('fonts/FuturaLT-Book.svg#FuturaLT-Book') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 /* :: 2.0 Import All CSS */
 
@@ -64,8 +60,24 @@
     padding: 0;
 }
 
-body {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li,
+button,
+input,
+textarea {
     font-family: $fonts;
+}
+
+body {
     font-size: 14px;
 }
 

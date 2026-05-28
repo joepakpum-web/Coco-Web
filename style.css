@@ -31,6 +31,7 @@
     :: 18.3.0 Tabs Area CSS
 */
 /* :: 1.0 Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url(css/bootstrap.min.css);
 @import url(css/classy-nav.css);
 @import url(css/owl.carousel.min.css);
@@ -39,19 +40,56 @@
 @import url(css/font-awesome.min.css);
 @import url(css/nice-select.css);
 @import url(css/travel-icon.css);
-@font-face {
-  font-family: 'FuturaLT-Book';
-  src: url("fonts/FuturaLT-Book.eot?#iefix") format("embedded-opentype"), url("fonts/FuturaLT-Book.woff") format("woff"), url("fonts/FuturaLT-Book.ttf") format("truetype"), url("fonts/FuturaLT-Book.svg#FuturaLT-Book") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+
 /* :: 2.0 Import All CSS */
 /* :: 3.0 Base CSS */
 * {
   margin: 0;
   padding: 0; }
 
+/* Global Font Override - forces Canva Sans on ALL elements, overriding Bootstrap */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li,
+ul,
+ol,
+div,
+section,
+nav,
+header,
+footer,
+main,
+aside,
+article,
+label,
+button,
+input,
+select,
+textarea,
+table,
+th,
+td,
+blockquote,
+figcaption,
+.btn,
+.form-control,
+.nav-link,
+.navbar,
+.tooltip,
+.popover {
+  font-family: "Canva Sans", "Inter", sans-serif !important;
+}
+
 body {
-  font-family: "FuturaLT-Book";
   font-size: 14px; }
 
 h1,
@@ -554,8 +592,7 @@ img {
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .header-area .palatin-main-menu .classy-navbar .menu-btn {
             margin-left: 30px; } }
-      .header-area .palatin-main-menu .classy-navbar .menu-btn {
-        /* margin-left removed — position is now controlled by flexbox */ }
+      /* margin-left removed — position is now controlled by flexbox */
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .header-area .palatin-main-menu .classy-navbar .menu-btn {
             margin-left: 30px; } }
@@ -565,7 +602,7 @@ img {
         .header-area .palatin-main-menu .classy-navbar .menu-btn a {
           color: #ffffff;
           font-size: 16px;
-          background-color: rgba(255, 255, 255, 0.2);
+          background-color: #055c9d;
           height: 60px;
           line-height: 60px;
           min-width: 150px;
@@ -573,7 +610,7 @@ img {
           display: inline-block;
           text-align: center; }
           .header-area .palatin-main-menu .classy-navbar .menu-btn a:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: #03487c;
             color: #ffffff; }
   .header-area .is-sticky .palatin-main-menu {
     position: fixed;
