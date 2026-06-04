@@ -602,7 +602,7 @@ img {
         .header-area .palatin-main-menu .classy-navbar .menu-btn a {
           color: #ffffff;
           font-size: 16px;
-          background-color: #006BA8;
+          background-color: #004C77 !important;
           height: 60px;
           line-height: 60px;
           min-width: 150px;
@@ -610,7 +610,7 @@ img {
           display: inline-block;
           text-align: center; }
           .header-area .palatin-main-menu .classy-navbar .menu-btn a:hover {
-            background-color: #004C77;
+            background-color: #002d47 !important;
             color: #ffffff; }
   .header-area .is-sticky .palatin-main-menu {
     position: fixed;
