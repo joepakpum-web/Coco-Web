@@ -587,7 +587,16 @@ img {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 300px;
         flex: 0 0 300px;
-        text-align: right;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 5px;
         z-index: 100; }
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .header-area .palatin-main-menu .classy-navbar .menu-btn {
@@ -601,11 +610,12 @@ img {
             display: none !important; } }
         .header-area .palatin-main-menu .classy-navbar .menu-btn a {
           color: #ffffff;
-          font-size: 16px;
+          font-size: 13px;
           background-color: #004C77 !important;
-          height: 60px;
-          line-height: 60px;
-          min-width: 150px;
+          height: 48px;
+          line-height: 48px;
+          min-width: 120px;
+          padding: 0 24px;
           border-radius: 0;
           display: inline-block;
           text-align: center; }

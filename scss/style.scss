@@ -605,6 +605,16 @@ img {
             }
             .menu-btn {
                 margin-left: 100px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: end;
+                -ms-flex-pack: end;
+                justify-content: flex-end;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                gap: 5px;
                 @media #{$breakpoint-lg} {
                     margin-left: 30px;
                 }
@@ -622,7 +632,20 @@ img {
                 }
                 a {
                     color: $white-color;
-                    font-size: 16px;
+                    font-size: 13px;
+                    background-color: #004C77 !important;
+                    height: 48px;
+                    line-height: 48px;
+                    min-width: 120px;
+                    padding: 0 24px;
+                    border-radius: 0;
+                    display: inline-block;
+                    text-align: center;
+                    
+                    &:hover {
+                        background-color: #002d47 !important;
+                        color: #ffffff;
+                    }
                 }
             }
         }
