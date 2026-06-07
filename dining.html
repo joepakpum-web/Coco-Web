@@ -15,7 +15,7 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=7.9">
+    <link rel="stylesheet" href="style.css?v=8.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <!-- Google Fonts for At Siam Premium Theme -->
@@ -726,6 +726,81 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <!-- Beautiful Contact Pop-up Modal -->
+    <div id="contactModal" class="contact-modal-overlay">
+        <div class="contact-modal-container">
+            <!-- Close Button -->
+            <button class="contact-modal-close-btn" id="closeModalBtn">&times;</button>
+            
+            <!-- Modal Header -->
+            <div class="contact-modal-header">
+                <div class="contact-modal-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <h3>Contact Us</h3>
+                <p>Please feel free to call us for reservations and inquiries.</p>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="contact-modal-body">
+                <!-- Phone Info -->
+                <div class="contact-card-item">
+                    <div class="contact-card-icon-box">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <div class="contact-card-text-box">
+                        <h4>Phone Numbers</h4>
+                        <p><a href="tel:+6638231001">+66 (0) 38-231001-6</a></p>
+                        <p><a href="tel:+66926298668">+66 (0) 92-6298668</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="contact-modal-footer">
+                <button class="contact-modal-secondary-btn" id="closeModalBtn2" style="width: 100%;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal Script -->
+    <script>
+        $(document).ready(function() {
+            var modal = $('#contactModal');
+            var closeBtn = $('#closeModalBtn');
+            var closeBtn2 = $('#closeModalBtn2');
+
+            // Function to open modal
+            function openModal() {
+                modal.addClass('active');
+            }
+
+            // Function to close modal
+            function closeModal() {
+                modal.removeClass('active');
+            }
+
+            // Hook close button actions
+            closeBtn.on('click', closeModal);
+            closeBtn2.on('click', closeModal);
+
+            // Also close if clicked outside the container
+            modal.on('click', function(e) {
+                if ($(e.target).is('#contactModal')) {
+                    closeModal();
+                }
+            });
+
+            // Make the "Call Now" buttons in navbar trigger the modal
+            $(document).on('click', '.menu-btn a, .proposal-btn', function(e) {
+                if ($(this).hasClass('proposal-btn') || $(this).text().trim().toLowerCase() === 'call now') {
+                    e.preventDefault();
+                    openModal();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

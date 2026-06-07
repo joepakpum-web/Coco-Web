@@ -1867,3 +1867,220 @@ img {
 }
 
 /* ====== The End ====== */
+
+/* Custom Contact Modal Styles */
+.contact-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 24, 48, 0.7); /* Deep blue premium semi-transparent backdrop */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    @include display-flex(flex);
+    @include align-items(center);
+    @include justify-content-center;
+    opacity: 0;
+    pointer-events: none;
+    @include trans-duration(400ms);
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.contact-modal-container {
+    background-color: #CDD2CA;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+    @include transform(scale(0.9));
+    @include trans-duration(400ms);
+    border: 2px solid #006BA8;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+
+    .contact-modal-overlay.active & {
+        @include transform(scale(1));
+    }
+}
+
+.contact-modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #888888;
+    cursor: pointer;
+    @include trans-duration(200ms);
+    line-height: 1;
+    padding: 0;
+
+    &:hover {
+        color: #333333;
+    }
+}
+
+.contact-modal-header {
+    text-align: center;
+    margin-bottom: 25px;
+
+    h3 {
+        font-size: 22px;
+        color: #002F4D;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 13.5px;
+        color: #666666;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+}
+
+.contact-modal-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(5, 92, 157, 0.1);
+    color: #006BA8;
+    border-radius: 50%;
+    display: inline-flex;
+    @include align-items(center);
+    @include justify-content-center;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact-modal-body {
+    margin-bottom: 30px;
+}
+
+.contact-card-item {
+    @include display-flex(flex);
+    @include align-items(flex-start);
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.contact-card-icon-box {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(5, 92, 157, 0.05);
+    color: #006BA8;
+    border-radius: 8px;
+    display: inline-flex;
+    @include align-items(center);
+    @include justify-content-center;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.contact-card-text-box {
+    h4 {
+        font-size: 14.5px;
+        color: #002F4D;
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+
+    p {
+        font-size: 13.5px;
+        color: #555555;
+        margin-bottom: 2px;
+        line-height: 1.4;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        color: #006BA8;
+        text-decoration: none;
+        @include trans-duration(200ms);
+        font-weight: 500;
+
+        &:hover {
+            color: #004C77;
+            text-decoration: underline;
+        }
+    }
+}
+
+.contact-modal-footer {
+    @include display-flex(flex);
+    gap: 12px;
+    @include justify-content-center;
+}
+
+.contact-modal-primary-btn {
+    background-color: #006BA8;
+    color: $white-color;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    @include trans-duration(200ms);
+    display: inline-flex;
+    @include align-items(center);
+    gap: 8px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #004C77;
+        color: $white-color;
+        box-shadow: 0 4px 12px rgba(5, 92, 157, 0.2);
+    }
+}
+
+.contact-modal-secondary-btn {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    @include trans-duration(200ms);
+
+    &:hover {
+        background-color: #e5e7eb;
+        color: #1f2937;
+    }
+}
+
+@media #{$breakpoint-xs} {
+    .contact-modal-container {
+        padding: 30px 20px;
+    }
+    .contact-modal-header h3 {
+        font-size: 19px;
+    }
+    .contact-modal-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .contact-modal-primary-btn,
+    .contact-modal-secondary-btn {
+        width: 100%;
+        @include justify-content-center;
+    }
+}
