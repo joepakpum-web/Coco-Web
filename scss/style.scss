@@ -1413,8 +1413,9 @@ img {
     aspect-ratio: 28 / 9 !important;
     min-height: 450px;
     @media #{$breakpoint-xs} {
-        aspect-ratio: 2 / 1 !important;
-        min-height: 180px;
+        margin-top: 70px !important;
+        aspect-ratio: 28 / 9 !important;
+        min-height: auto !important;
     }
     .bradcumbContent {
         margin-top: 70px;
