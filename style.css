@@ -2334,3 +2334,113 @@ img {
     justify-content: center;
   }
 }
+
+/* ---- Reservation Info Bar (below hero / banner) ---- */
+.reservation-bar {
+  background-color: #f6f6f5;
+  border-bottom: 1px solid #e6e6e4;
+  padding: 14px 0;
+}
+.reservation-bar .container-fluid {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.reservation-bar .res-help-text {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+  line-height: 1.35;
+  font-weight: 400;
+}
+.reservation-bar .res-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.reservation-bar .res-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #d2d2cf;
+  color: #8a8a86;
+  font-size: 15px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.reservation-bar .res-social a:hover { color: #fff; }
+.reservation-bar .res-social a.res-line:hover { background-color: #06c755; border-color: #06c755; }
+.reservation-bar .res-social a.res-fb:hover { background-color: #1877f2; border-color: #1877f2; }
+.reservation-bar .res-social a.res-tel:hover { background-color: #333; border-color: #333; }
+.reservation-bar .res-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.reservation-bar .res-stat .res-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: #9a9a96;
+  font-size: 20px;
+}
+.reservation-bar .res-stat .res-stat-text {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.3;
+}
+.reservation-bar .res-stat .res-stat-text strong {
+  display: block;
+  font-weight: 600;
+  color: #555;
+  font-size: 15px;
+}
+@media only screen and (max-width: 991px) {
+  .reservation-bar {
+    padding: 9px 0;
+  }
+  .reservation-bar .container-fluid {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .reservation-bar .row {
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+  }
+  .reservation-bar .res-help-text { display: none; }
+  .reservation-bar [class*="col-"] {
+    width: auto;
+    max-width: none;
+    flex: 0 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .reservation-bar .res-block {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    white-space: nowrap;
+    margin: 0;
+    gap: 9px !important;
+  }
+  .reservation-bar .res-stats-group {
+    justify-content: flex-start;
+    margin-left: 12px;
+    padding-left: 12px;
+    border-left: 1px solid #e0e0dd;
+    gap: 14px !important;
+  }
+  .reservation-bar .res-social { gap: 6px; }
+  .reservation-bar .res-social a { width: 24px; height: 24px; font-size: 11px; }
+  .reservation-bar .res-stat { gap: 6px; }
+  .reservation-bar .res-stat .res-stat-icon { width: 26px; height: 26px; font-size: 14px; }
+  .reservation-bar .res-stat .res-stat-text { font-size: 10px; }
+  .reservation-bar .res-stat .res-stat-text strong { font-size: 12px; }
+}
